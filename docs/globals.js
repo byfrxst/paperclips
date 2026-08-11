@@ -180,3 +180,33 @@ var threnodyLoadedBool = false;
 
 
 
+// --- Enhanced Save Export & Import Logic ---
+function exportSaveJSON() {
+    var saveData = {};
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        saveData[key] = localStorage.getItem(key);
+    }
+    return JSON.stringify(saveData);
+}
+
+function importSaveJSON(jsonString) {
+    try {
+        var saveData = JSON.parse(jsonString);
+        localStorage.clear();
+        for (var key in saveData) {
+            localStorage.setItem(key, saveData[key]);
+        }
+        location.reload();
+    } catch (e) {
+        alert("Invalid save data string!");
+    }
+}
+
+// --- Debug / Speedrun Helpers ---
+var DEV_SPEED_MULTIPLIER = 1; // Change in console to speed up game ticks (e.g., DEV_SPEED_MULTIPLIER = 5)
+
+function setGameSpeed(multiplier) {
+    DEV_SPEED_MULTIPLIER = multiplier;
+    console.log("Game tick rate multiplier set to: " + DEV_SPEED_MULTIPLIER);
+}

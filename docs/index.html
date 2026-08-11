@@ -24,5 +24,17 @@
 </a>
 
 </div>
-    
+
+        <!-- Save Export/Import Modal -->
+        <div id="saveModal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999;">
+        <div style="background:#fff; width:90%; max-width:500px; margin:100px auto; padding:20px; border-radius:8px; font-family:monospace;">
+            <h3 id="modalTitle">Export Save Data</h3>
+            <textarea id="saveStringData" style="width:100%; height:150px; font-size:12px; font-family:monospace; margin-bottom:10px;"></textarea>
+            <div style="display:flex; justify-content:space-between;">
+            <button id="btnModalAction" style="padding:8px 16px; cursor:pointer;">Copy</button>
+            <button id="btnModalClose" style="padding:8px 16px; cursor:pointer;">Close</button>
+            </div>
+        </div>
+        </div>
+        
     </body>

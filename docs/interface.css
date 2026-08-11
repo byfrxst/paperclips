@@ -787,3 +787,39 @@ p.hypnoDrone {
    border: 1px solid #ffffff;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/* Dynamic Layout & Mobile Responsiveness Fixes */
+body {
+    -webkit-font-smoothing: antialiased;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+    #page {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .column, .column2, .column3 {
+        width: 100% !important;
+        float: none !important;
+        margin-bottom: 25px;
+    }
+
+    button {
+        min-height: 40px;
+        touch-action: manipulation;
+    }
+}
